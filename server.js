@@ -42,7 +42,7 @@ bot.on('channelDelete', (channel) => {
 });
 
 bot.on('messageDelete', (message) => {
-    console.log(message)
+    console.log()
 
 });
 
