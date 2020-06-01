@@ -1,34 +1,45 @@
-// server.js
-// where your node app starts
+//SCRIPT DE ARRANQUE
 
-// we've started you off with Express (https://expressjs.com/)
-// but feel free to use whatever libraries or frameworks you'd like through `package.json`.
-const express = require("express");
+const http = require('http');
+const express = require('express');
 const app = express();
+let cooldown= new Set();
 
-// our default array of dreams
-const dreams = [
-  "Find and count some sheep",
-  "Climb a really tall mountain",
-  "Wash the dishes"
-];
+app.use(express.static('public'));
 
-// make all the files in 'public' available
-// https://expressjs.com/en/starter/static-files.html
-app.use(express.static("public"));
+app.get("/", function (request, response) {
+  response.sendFile(__dirname + '/views/index.html');
+});
 
-// https://expressjs.com/en/starter/basic-routing.html
 app.get("/", (request, response) => {
-  response.sendFile(__dirname + "/views/index.html");
+  response.sendStatus(200);
 });
 
-// send the default array of dreams to the webpage
-app.get("/dreams", (request, response) => {
-  // express helps us take JS objects and send them as JSON
-  response.json(dreams);
+app.listen(process.env.PORT);
+
+setInterval(() => {
+  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`); 
+}, 280000);
+
+
+// DESDE AQUI EL CODIGO EL BOT
+
+/* Libreria */
+const Discord = require("discord.js"); const fs = require('fs'); const db = require('megadb');
+/* BOT */
+const bot = new Discord.Client();
+const prefix = process.env.prefix;
+
+
+bot.on('ready', () => {
+    console.log("》 🟢 ENCENDIDO CORRECTAMENTE 🟢 《");
 });
 
-// listen for requests :)
-const listener = app.listen(process.env.PORT, () => {
-  console.log("Your app is listening on port " + listener.address().port);
+
+bot.on('channelDelete', (channel) => {
+
+
+  
 });
+
+bot.login(process.env.token);
