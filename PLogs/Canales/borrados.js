@@ -18,7 +18,7 @@ module.exports.run = async (bot, channel) => {
       .setTitle("Canal eliminado")
       .setThumbnail(userAvatar)
       .addField("Canal", canalname)
-      .addField("ID del canal", canalid)
+      .addField("🆔 ID del canal 🆔", canalid)
       .addField("Tipo", tipo)  
       .addField("Por", `<@${userID}> (ID: ${userID})`)
       .setTimestamp()
