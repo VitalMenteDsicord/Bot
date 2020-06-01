@@ -41,4 +41,11 @@ bot.on('channelDelete', (channel) => {
   log.run(bot, channel);
 });
 
+bot.on('messageDelete', (message) => {
+    console.log(message)
+
+});
+
+
+
 bot.login(process.env.token);
