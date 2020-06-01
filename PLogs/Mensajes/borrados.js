@@ -16,7 +16,7 @@ module.exports.run = async (bot, message) => {
       .setColor(0xFF0202)
       .setTitle("Mensaje eliminado")
       .setThumbnail(userAvatar)
-    
+      .addField("Por", `<@${userID}> (ID: ${userID})`)
     
     });
   
