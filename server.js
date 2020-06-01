@@ -42,8 +42,8 @@ bot.on('channelDelete', (channel) => {
 });
 
 bot.on('messageDelete', (message) => {
-    console.log()
-
+  let log = require("./PLogs/Mensajes/borrados.js")  
+  log.run(bot, message);
 });
 
 
