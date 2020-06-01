@@ -37,9 +37,8 @@ bot.on('ready', () => {
 
 
 bot.on('channelDelete', (channel) => {
-
-
-  
+  let log = require("./PLogs/Canales/borrados.js")  
+  log.run(bot, channel);
 });
 
 bot.login(process.env.token);
