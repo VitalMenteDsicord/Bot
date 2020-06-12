@@ -48,4 +48,4 @@ bot.on('messageDelete', (message) => {
 
 
 
-bot.login(process.env.token);
+//bot.login(process.env.token);
