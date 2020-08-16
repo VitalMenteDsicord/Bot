@@ -1,3 +1,14 @@
 .img-background{width: 100%;}
 
-.container-footer.correct{margin:0;padding:0;}
+html, body {
+  background: url("https://i.imgur.com/VLW8Aa3.png")
+}
+
+.fondo{
+  background: white;
+}
+
+.container-footer.correct{
+  position: absolute;
+  bottom:-20px;
+}
