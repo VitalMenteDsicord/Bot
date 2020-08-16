@@ -17,7 +17,9 @@ app.get("/servicios", (request, response) => {
     response.sendFile(__dirname + '/html/servicios.html');
 });
 
-
+app.get("/contacto", (request, response) => {
+    response.sendFile(__dirname + '/html/contacto.html');
+});
 
 // DESDE AQUI EL CODIGO EL BOT
 
