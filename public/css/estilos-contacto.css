@@ -3,11 +3,24 @@
 }
 
 html, body {
-  background: url("https://i.imgur.com/UHugdJN.png")
+  background: url("https://i.imgur.com/ludlyke.png")
   no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   overflow: hidden;
+}
+
+.contenedor-formulario {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 50%;
+  left: 0;
+  right: 0;
+  
+  text-align: center;
+  width: 400px;
+  font-size: 16px;
 }
