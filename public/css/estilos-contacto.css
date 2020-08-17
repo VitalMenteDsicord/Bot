@@ -11,12 +11,3 @@ html, body {
   background-size: cover;
   overflow: hidden;
 }
-
-.contenedor-formulario {
-  position:absolute;
-  right: 50%;
-  bottom: 50%;
-  border-radius: 5px;
-  background-color: #a2b3de;
-  padding: 20px;
-}
