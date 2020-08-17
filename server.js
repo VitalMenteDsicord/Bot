@@ -1,7 +1,7 @@
 //SCRIPT DE ARRANQUE
 
-const http = require('http');const express = require('express');
-const app = express();let cooldown= new Set();
+const http = require('http');const express = require('express');const app = express();
+let cooldown= new Set();
 
 app.use(express.static("public"));app.listen(process.env.PORT);
 
