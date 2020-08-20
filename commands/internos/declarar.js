@@ -16,12 +16,14 @@ module.exports.run = async (bot, message) => {
 
     /* Todo listo */ 
     let ServicioOF = argumentos[0].replace(prefix+"declarar",'');
-    let PrecioCa = argumentos[1];
-    let PrecioFa = Number(argumentos[2]);
+    let PrecioCa =  Number(argumentos[1]);let PrecioFa = Number(argumentos[2]);
     let NotasAD = argumentos[3];
-    if(!ServicioOF ||  !PrecioCa || !PrecioFa || !NotasAD){let tipo = 1;;errores.run(bot, message, tipo);return null};
-    if(PrecioFa.includes("NaN")){let tipo = 2;;errores.run(bot, message, tipo);return null};
 
+    if(!ServicioOF ||  !PrecioCa || !PrecioFa || !NotasAD){let tipo = 1;;errores.run(bot, message, tipo);return null};
+    if(PrecioFa === "NaN" ||  PrecioCa === "NaN"){let tipo = 2;;errores.run(bot, message, tipo);return null};
+
+    Dinero.establecer(`${message.guild.id}.declarado`, DeclaradoAC + PrecioFa);
+    
     let embed = new Discord.MessageEmbed()
         .setColor(0xFF2D00)
         .setTitle("Registro de pagos")
@@ -32,6 +34,8 @@ module.exports.run = async (bot, message) => {
         .addField("Notas adicionales", NotasAD)
         .addField("Dinero transferido a cúpula", "NO")
     bot.channels.cache.get(channel).send({embed}).then(m =>{m.react('💰');}).catch();
+
+
 
 }
 

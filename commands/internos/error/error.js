@@ -20,7 +20,8 @@ module.exports.run = async (bot, message, tipo) => {
                 .setColor(0xFF0000)
                 .setTitle("ERROR")
                 .addField("Código de error", "0x0002")
-                .addField("Estado","Recuerda que las cantidades de dinero se deben introducir sin puntos ni comas de por medio.")
+                .addField("Estado","Recuerda que en las cantidades de dinero los numeros con decimales se representan con un punto")
+                .addField("Ejemplo", "10.25")
                 .setFooter("Me hago responsable de lo que digo, no de lo que entiendas")
             message.author.send({embed}).catch();
         break;

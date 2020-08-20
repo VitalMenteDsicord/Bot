@@ -1,7 +1,8 @@
 module.exports = (bot, message) => { 
-
+    let prefix = bot.prefix;
+    
     if(message.type === "PINS_ADD"){message.delete().catch();};
-    let contienePrefix = message.content.includes(bot.prefix);
+    let contienePrefix = message.content.includes(prefix);
 
     if(!contienePrefix){return null};let messageArray = message.content.split(" ");let command = messageArray[0].replace(prefix,'').trim();
     message.delete().catch();
