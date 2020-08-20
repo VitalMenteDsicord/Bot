@@ -1,7 +1,14 @@
-//SCRIPT DE ARRANQUE
-
-const http = require('http');const express = require('express');const app = express();
+/* LIBRERIAS */
+const Discord = require('discord.js');const http = require('http');const express = require('express'); let { readdirSync } = require('fs');
+/* BOT AND DATA */
+const bot = new Discord.Client();
+bot.comandosIN = new Discord.Collection();
+bot.prefix = ";";
+/* WEB DATA & OTROS */ 
+const app = express();
 let cooldown= new Set();
+
+// WEB Y  SCRIPT DE ARRANQUE
 
 app.use(express.static("public"));app.listen(process.env.PORT);
 
@@ -21,14 +28,9 @@ app.get("/contacto", (request, response) => {
     response.sendFile(__dirname + '/html/contacto.html');
 });
 
-// DESDE AQUI EL CODIGO EL BOT
 
-/* LIBRERIAS */
-const Discord = require('discord.js'); let { readdirSync } = require('fs'); 
-/* BOT AND DATA */
-const bot = new Discord.Client();
-bot.comandosIN = new Discord.Collection();
-bot.prefix = ";";
+
+// DISCORD BOT DATA //
 
 /* COMANDOS DEL BOT */
 console.log("[COMANDOS INTERNOS]");
