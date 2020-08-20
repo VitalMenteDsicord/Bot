@@ -28,9 +28,9 @@ app.get("/contacto", (request, response) => {
     response.sendFile(__dirname + '/html/contacto.html');
 });
 
-
-
 // DISCORD BOT DATA //
+
+
 
 /* COMANDOS DEL BOT */
 console.log("[COMANDOS INTERNOS]");
