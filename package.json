@@ -1,5 +1,5 @@
 {
-  "name": "Weazel",
+  "name": "weazelnews",
   "version": "0.0.1",
   "description": "acerca de? su bot",
   "main": "node server.js",
@@ -16,11 +16,5 @@
   },
     "engines": {
     "node": "12.x"
-  },
-  "license": "MIT",
-  "keywords": [
-    "node",
-    "glitch",
-    "express"
-  ]
+  }
 }

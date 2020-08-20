@@ -23,16 +23,41 @@ app.get("/contacto", (request, response) => {
 
 // DESDE AQUI EL CODIGO EL BOT
 
-/* Libreria */
-const Discord = require("discord.js"); const fs = require('fs'); const db = require('megadb');
-/* BOT */
+/* LIBRERIAS */
+const Discord = require('discord.js'); let { readdirSync } = require('fs'); 
+/* BOT AND DATA */
 const bot = new Discord.Client();
-const prefix = process.env.prefix;
+bot.comandosIN = new Discord.Collection();
+bot.prefix = ";";
+
+/* COMANDOS DEL BOT */
+console.log("[COMANDOS INTERNOS]");
+for(const file of readdirSync('./commands/internos/')) { 
+    if(file.endsWith(".js")){
+        console.log(file);
+        let archivo = require(`./commands/internos/${file}`); 
+        let aliases;
+        try {aliases = archivo.help.aliases.length;} catch(err){};
+        if(aliases > 0 && aliases !== undefined) {
+            for(let i = 0; i < aliases; i++){bot.comandosIN.set(archivo.help.aliases[i], archivo)};
+            bot.comandosIN.set(archivo.help.name, archivo);console.log(`${archivo.help.name}.js cargado con ${aliases} alias`);
+        } else {console.log(`${archivo.help.name}.js cargado`);bot.comandosIN.set(archivo.help.name, archivo)};
+    };
+};
+/* EVENTOS DEL BOT */
+console.log("[CARGA DE EVENTOS]");
+for(const file of readdirSync('./event/')) { 
+    if(file.endsWith(".js")){
+        let fileName = file.substring(0, file.length - 3); 
+        let fileContents = require(`./event/${file}`); 
+
+        console.log(file);
+
+        bot.on(fileName, fileContents.bind(null, bot));
+        delete require.cache[require.resolve(`./event/${file}`)];  
+    };
+};
 
 
-bot.on('ready', () => {console.log("》 🟢 ENCENDIDO CORRECTAMENTE 🟢 《");});
 
-
-
-
-//bot.login(process.env.token);
+bot.login(process.env.token)
