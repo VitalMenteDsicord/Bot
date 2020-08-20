@@ -36,7 +36,6 @@ app.get("/contacto", (request, response) => {
 console.log("[COMANDOS INTERNOS]");
 for(const file of readdirSync('./commands/internos/')) { 
     if(file.endsWith(".js")){
-        console.log(file);
         let archivo = require(`./commands/internos/${file}`); 
         let aliases;
         try {aliases = archivo.help.aliases.length;} catch(err){};
