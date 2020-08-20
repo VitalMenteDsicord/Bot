@@ -35,8 +35,6 @@ module.exports.run = async (bot, message) => {
         .addField("Dinero transferido a cúpula", "NO")
     bot.channels.cache.get(channel).send({embed}).then(m =>{m.react('💰');}).catch();
 
-
-
 }
 
 module.exports.help = {
