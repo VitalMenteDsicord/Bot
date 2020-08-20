@@ -5,7 +5,8 @@ const Dinero = new db.crearDB('dinero', 'Contabilidad');
 
 module.exports.run = async (bot, message) => {
     let prefix = bot.prefix;
-
+    let administrador = message.member.hasPermission("ADMINISTRATOR");
+    
     let DeclaradoAC = Dinero.tiene(`${message.guild.id}.declarado`) ? await Dinero.obtener(`${message.guild.id}.declarado`): 0;
     let TrasferidoAC = Dinero.tiene(`${message.guild.id}.transferido`) ? await Dinero.obtener(`${message.guild.id}.transferido`): 0;
 
@@ -13,13 +14,12 @@ module.exports.run = async (bot, message) => {
     let mes = meses[fecha.getMonth()];
 
     let embed = new Discord.MessageEmbed()
-        .setColor(0xd80b0b)
+        .setColor(0x890202)
         .setTitle("Ganancias de "+mes)
         .addField("Sin trasferir a cupula","$ "+DeclaradoAC)
         .addField("Transferidas a cupula","$ "+TrasferidoAC)
-    message.channel.send({embed}).catch();
-
-
+    if(administrador){message.channel.send({embed}).catch();}
+    else{message.author.send({embed}).catch();}
 };
 
 

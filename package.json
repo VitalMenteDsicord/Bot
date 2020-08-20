@@ -8,13 +8,14 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "discord.js": "^12.2.0",
     "express": "^4.17.1",
     "fs": "^0.0.2",
-    "megadb": "^3.4.0",
-    "discord.js": "^12.2.0",
-    "http": "^0.0.0"
+    "generate-password": "^1.5.1",
+    "http": "^0.0.0",
+    "megadb": "^3.4.0"
   },
-    "engines": {
+  "engines": {
     "node": "12.x"
   }
 }
