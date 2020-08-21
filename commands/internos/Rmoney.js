@@ -1,4 +1,4 @@
-const funciones = require("./functions/functions.js"); const errores = require("./error/error.js");
+const errores = require("./error/error.js");
 /* LIBRRIAS */
 const Discord = require("discord.js"); const db = require('megadb'); const {readFileSync} = require("fs");
 /*DATA */

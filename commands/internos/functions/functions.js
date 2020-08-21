@@ -30,3 +30,26 @@ function hora(InputFecha)
     }
 };
 
+function hasrole(message, roles) 
+{
+    for(let i = 0;i<roles.length; i++){
+        let role = roles[i];
+        let hasrole = servidor.members.cache.get(message.author.id)._roles.includes(role);
+        if(hasrole)
+        {
+            return true;
+        }
+    }
+
+    return false;
+};
+
+
+
+
+
+module.exports = {
+    dia,
+    hora,
+    hasrole
+}
