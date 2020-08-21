@@ -43,6 +43,24 @@ module.exports.run = async (bot, message, tipo) => {
                 .setFooter("Me hago responsable de lo que digo, no de lo que entiendas")
             message.author.send({embed}).catch();
         break;
+        case 5:
+            embed = new Discord.MessageEmbed()
+                .setColor(0xFF0000)
+                .setTitle("ERROR")
+                .addField("Código de error", "0x0005")
+                .addField("Estado","No tienes permisos suficientes para ejecutar este comando.")
+                .setFooter("Tengo menos ganas de trabajar que el que le puso el nombre a los frutos del bosque")
+            message.author.send({embed}).catch();
+        break;
+        case 6:
+            embed = new Discord.MessageEmbed()
+                .setColor(0xFF0000)
+                .setTitle("ERROR")
+                .addField("Código de error", "0x0006")
+                .addField("Estado","Debes mencionar al usuario que desees revisar.")
+                .setFooter("No puedo parar de pensar en ti desde que te presté dinero.")
+            message.author.send({embed}).catch();
+        break;
     }
 
 }

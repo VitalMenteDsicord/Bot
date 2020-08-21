@@ -2,7 +2,7 @@ const funciones = require("./functions/functions.js");const errores = require(".
 /* LIBRRIAS */
 const Discord = require("discord.js"); const db = require('megadb'); const {readFileSync} = require("fs");
 
-const TicketUser = new db.crearDB('iduser', 'tickets');
+const userdata = new db.crearDB('iduser', 'tickets');
 
 module.exports.run = async (bot, message) => {
 
@@ -11,8 +11,15 @@ module.exports.run = async (bot, message) => {
 
     let hasrole = await funciones.hasrole(message, roles);
 
-    if(!hasrole){console.log("test");return null;}
-    else {console.log("test")}
+    if(!hasrole){let tipo = 5;errores.run(bot, message, tipo);return null;}
+    if(message.mentions.users.size < 1){let tipo = 6;errores.run(bot, message, tipo);return null};
+
+
+    let server = message.guild.id;
+    let user = message.mentions.users.first();
+
+
+
 
 
 

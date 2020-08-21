@@ -32,6 +32,7 @@ function hora(InputFecha)
 
 function hasrole(message, roles) 
 {
+    let servidor = message.guild;
     for(let i = 0;i<roles.length; i++){
         let role = roles[i];
         let hasrole = servidor.members.cache.get(message.author.id)._roles.includes(role);
