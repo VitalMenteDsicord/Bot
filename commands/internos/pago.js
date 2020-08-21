@@ -7,7 +7,7 @@ module.exports.run = async (bot, message) => {
     let CantidadAP = argumentos[0].replace(prefix+"pago",'');let Beneficiario = argumentos[1];
     let Ncuenta = argumentos[2];let codigo = generator.generate({length: 5, numbers: true});
 
-    if(!CantidadAP ||  !Beneficiario || !Ncuenta){return null};
+    if(!CantidadAP ||  !Beneficiario || !Ncuenta){let tipo = 3;errores.run(bot, message, tipo);return null};
 
     let embed = new Discord.MessageEmbed()
         .setTitle("PAGO").setColor(0xFFFF00)

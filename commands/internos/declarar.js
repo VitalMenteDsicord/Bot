@@ -19,8 +19,8 @@ module.exports.run = async (bot, message) => {
     let PrecioCa =  Number(argumentos[1]);let PrecioFa = Number(argumentos[2]);
     let NotasAD = argumentos[3];
 
-    if(!ServicioOF ||  !PrecioCa || !PrecioFa || !NotasAD){let tipo = 1;;errores.run(bot, message, tipo);return null};
-    if(PrecioFa === "NaN" ||  PrecioCa === "NaN"){let tipo = 2;;errores.run(bot, message, tipo);return null};
+    if(!ServicioOF ||  !PrecioCa || !PrecioFa || !NotasAD){let tipo = 1;errores.run(bot, message, tipo);return null};
+    if(PrecioFa === "NaN" ||  PrecioCa === "NaN"){let tipo = 2;errores.run(bot, message, tipo);return null};
 
     Dinero.establecer(`${message.guild.id}.declarado`, DeclaradoAC + PrecioFa);
     
