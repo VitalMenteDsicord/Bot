@@ -4,7 +4,6 @@ var embed;
 module.exports.run = async (bot, message, tipo) => {
 
     switch(tipo){
-
         case 1:
             embed = new Discord.MessageEmbed()
                 .setColor(0xFF0000)
@@ -31,11 +30,19 @@ module.exports.run = async (bot, message, tipo) => {
                 .setTitle("ERROR")
                 .addField("Código de error", "0x0003")
                 .addField("Estado","No has introducido todos los parámetros necesarios.")
-                .addField("Plantilla del comando", bot.prefix+"declarar Servicio Ofrecido ,, Precio catálogo ,, Precio facturado ,, Notas adicionales")
+                .addField("Plantilla del comando", bot.prefix+"pago Cantidad a pagar ,, Beneficiario ,, Número de cuenta")
+                .setFooter("Previsión del tiempo para esta noche: estará oscuro")
+            message.author.send({embed}).catch();
+        break;
+        case 4:
+            embed = new Discord.MessageEmbed()
+                .setColor(0xFF0000)
+                .setTitle("ERROR")
+                .addField("Código de error", "0x0004")
+                .addField("Estado","Recuerda que el número de cuenta es la ID del usuario que recibe el dinero")
                 .setFooter("Me hago responsable de lo que digo, no de lo que entiendas")
             message.author.send({embed}).catch();
         break;
-
     }
 
 }

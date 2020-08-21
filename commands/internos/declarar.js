@@ -8,7 +8,7 @@ module.exports.run = async (bot, message) => {
     let prefix = bot.prefix;
 
     let datos = readFileSync('./config/config.json');
-    let channel = JSON.parse(datos).CInternos.RDinero;
+    let channel = JSON.parse(datos).CInternos.Canales.RDinero;
 
     let argumentos = message.content.split(",,");
     let DeclaradoAC = Dinero.tiene(`${message.guild.id}.declarado`) ? await Dinero.obtener(`${message.guild.id}.declarado`): 0;
