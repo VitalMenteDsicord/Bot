@@ -43,7 +43,14 @@ module.exports.run = async (bot, message) => {
 
   
     try {
-      let canal = bot.channels.cache.get(canalUser);
+      let canal = bot.channels.cache.get(canalUser).id;
+      
+      let embed = new Discord.MessageEmbed()
+        .setTitle("ERROR ENCONTRADO")
+        .setColor(0x920000)
+        .setDescription("El usuario <@"+user.id+"> no tiene establecido su apodo IC")
+      message.author.send({embed}).catch();
+      
     } catch(err){
       
       userdata.eliminar(user.id);
