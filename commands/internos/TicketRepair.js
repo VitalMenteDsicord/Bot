@@ -20,8 +20,8 @@ module.exports.run = async (bot, message) => {
     let user = message.mentions.users.first();
     let usuario = message.guild.members.cache.get(user.id).nickname;
 
-    console.log(usuario)
-
+    if(usuario === null){return null;}
+    if(canalUser === 0){return null;}
 
 
 
