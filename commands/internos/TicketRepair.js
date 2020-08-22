@@ -49,7 +49,7 @@ module.exports.run = async (bot, message) => {
         .setTitle("ERROR ENCONTRADO")
         .setColor(0x920000)
         .setDescription("El usuario <@"+user.id+"> ya tiene un canal activo")
-        .addField("","")
+        .addField("","<#"+canal+">")
       message.author.send({embed}).catch();
       
     } catch(err) {
