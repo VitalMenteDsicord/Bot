@@ -1,0 +1,58 @@
+const Discord = require("discord.js");const fs = require('fs');const db = require('megadb');
+
+const TicketUser = new db.crearDB('iduser', 'tickets');
+const TicketChannel = new db.crearDB('canal', 'tickets');
+
+module.exports.run = async (bot, messageReaction, user) => {
+
+    let datos = fs.readFileSync('./config/config.json');
+    let dataT = JSON.parse(datos).ticket;
+
+    let usuario = messageReaction.message.channel.guild.members.cache.get(user.id).nickname;
+    let servidor = messageReaction.message.channel.guild;
+
+    let categoria = dataT.CategoriaTAb;let rolesTAB = dataT.RolesTAb;
+    let userTicket = TicketUser.tiene(`${user.id}`) ? await TicketUser.obtener(`${user.id}`): 0;
+
+
+    if(userTicket !== 0){return null};
+    if(categoria === undefined || categoria === null){return null};
+    if(usuario === null){return null};
+
+
+    let canal = await servidor.channels.create(`Ticket-${usuario}`, {
+        type: 'text',
+        parent: categoria,
+        permissionsOverwrites: 
+        [
+            {
+                allow: ['VIEW_CHANNEL'],
+                id: user.id
+            }, 
+            {
+                deny: ['VIEW_CHANNEL'],
+                id: servidor.id
+            }
+        ]
+    });
+
+    bot.channels.cache.get(canal.id).edit({parent: categoria, permissionOverwrites:[{deny: 'VIEW_CHANNEL',id: servidor.id }]})
+    .then(async ch => {
+        ch.updateOverwrite(user.id, {VIEW_CHANNEL: true});
+        for(let i = 0; i<rolesTAB.length;i++){
+            let role = rolesTAB[i];
+            ch.updateOverwrite(role, {VIEW_CHANNEL: true});
+        }
+    });
+
+    let embed = new Discord.MessageEmbed()
+        .setTitle("Su ticket ha sido creado")
+        .setColor(0xE5C62A)
+        .setDescription("En un momento te atenderemos. Mientras tanto, indicanos tu nombre y el motivo de contacto. \n \n"+
+        "Para cerrar el ticket reacciona con 🧻")
+    canal.send({embed}).then(m => {m.react("🧻");});
+
+    TicketUser.establecer(user.id, canal.id);
+    TicketChannel.establecer(canal.id, user.id);
+
+};

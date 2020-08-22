@@ -30,7 +30,7 @@ module.exports.run = async (bot, message) => {
   
     let embed = new Discord.MessageEmbed()
         //.setAuthor('LSMA', 'https://i.imgur.com/LJClyPX.png', 'https://www.lu-rp.es/foro/thread-10448.html')
-        .setTitle("¡Bienvenid@ a nuestra aplicación!")
+        .setTitle("Solicitud de Empleo")
         .setDescription("Empresa médica dedicada a emergencias sanitarias, traslados no urgentes, farmacología y psiquiatría. ¡Contamos con Seguro Extrahospitalario!")
         .setColor(0x037FDA)
         .addField("Menú de navegación", "¡Accede directamente desde aquí al apartado que desees!")
@@ -52,5 +52,5 @@ module.exports.run = async (bot, message) => {
 
 
 module.exports.help = {
-    name: "texto" // Comando que tienes que poner en discord 
+    name: "unetetexto" // Comando que tienes que poner en discord 
 };
