@@ -12,14 +12,15 @@ module.exports.run = async (bot, message) => {
 
     let hasrole = await funciones.hasrole(message, roles);
 
-    if(!hasrole){let tipo = 5;errores.run(bot, message, tipo);return null;}
+    //if(!hasrole){let tipo = 5;errores.run(bot, message, tipo);return null;}
     if(message.mentions.users.size < 1){let tipo = 6;errores.run(bot, message, tipo);return null};
 
 
     let server = message.guild.id;
     let user = message.mentions.users.first();
+    let usuario = message.guild.members.cache.get(user.id).nickname;
 
-
+    console.log(usuario)
 
 
 
