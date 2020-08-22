@@ -43,6 +43,7 @@ for(const file of readdirSync('./commands/internos/')) {
         } else {console.log(`${archivo.help.name}.js cargado`);bot.comandosIN.set(archivo.help.name, archivo)};
     };
 };
+
 /* EVENTOS DEL BOT */
 console.log("[CARGA DE EVENTOS]");
 for(const file of readdirSync('./event/')) { 

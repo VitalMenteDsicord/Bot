@@ -16,9 +16,9 @@ function precenseUpdate(bot) {
 function LoadC(bot) {
   
   console.log("[COMANDOS INTERNOS]");
-  for(const file of readdirSync('./commands/internos/')) { 
+  for(const file of readdirSync('/app/commands/internos/')) { 
     if(file.endsWith(".js")){
-        let archivo = require(`./commands/internos/${file}`); 
+        let archivo = require(`/app/commands/internos/${file}`); 
         let aliases;
         try {aliases = archivo.help.aliases.length;} catch(err){};
         if(aliases > 0 && aliases !== undefined) {
@@ -34,9 +34,9 @@ function LoadC(bot) {
 function reloadC(bot) {
   console.log("》 RECARGANDO COMANDOS 《")
   
-  for(const file of readdirSync('./commands/internos/')) { 
+  for(const file of readdirSync('/app/commands/internos/')) { 
     if(file.endsWith(".js")){
-      delete require.cache[require.resolve(`./commands/internos/${file}`)]
+      delete require.cache[require.resolve(`/app/commands/internos/${file}`)]
     };
   };
   

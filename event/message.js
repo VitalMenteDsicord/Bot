@@ -10,6 +10,6 @@ module.exports = (bot, message) => {
     message.delete().catch();
     let comandoIn = bot.comandosIN.get(command);if(comandoIn){comandoIn.run(bot, message);return null;};
   
-    if(command === "reloadC"){message.delete().catch();extras.reloadC(bot);return null;}
+    if(command === "reloadC"){extras.reloadC(bot);return null;}
 
 };
