@@ -41,8 +41,25 @@ module.exports.run = async (bot, message) => {
       message.author.send({embed}).catch();return null;
     }
 
+  
+    try {
+      let canal = bot.channels.cache.get(canalUser);
+    } catch(err){
+      
+      userdata.eliminar(user.id);
+      channeldata.eliminar(canalUser);
+      
+      let embed = new Discord.MessageEmbed()
+        .setTitle("ERROR ENCONTRADO")
+        .setColor(0x920000)
+        .setDescription("El usuario se encontraba activo en la base de datos, ya hemos corregido el error.")
+      message.author.send({embed}).catch();
+      
+    }
+  
 
-
+  
+  
 }
 
 
