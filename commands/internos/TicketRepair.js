@@ -16,12 +16,30 @@ module.exports.run = async (bot, message) => {
     if(message.mentions.users.size < 1){let tipo = 6;errores.run(bot, message, tipo);return null};
 
 
-    let server = message.guild.id;
-    let user = message.mentions.users.first();
+    let server = message.guild.id;let user = message.mentions.users.first();
     let usuario = message.guild.members.cache.get(user.id).nickname;
 
-    if(usuario === null){return null;}
-    if(canalUser === 0){return null;}
+    let canalUser = userdata.tiene(user.id) ? await userdata.obtener(user.id): 0;  
+
+  
+    if(usuario === null)
+    {
+      let embed = new Discord.MessageEmbed()
+        .setTitle("ERROR ENCONTRADO")
+        .setColor(0x920000)
+        .setDescription("El usuario <@"+user.id+"> no tiene establecido su apodo IC")
+        .addField("Solución","/nick Nombre Apellido")
+      message.author.send({embed}).catch();return null;
+    }
+    
+    if(canalUser === 0)
+    {
+      let embed = new Discord.MessageEmbed()
+        .setTitle("USUARIO CORRECTO")
+        .setColor(0x00D74E)
+        .setDescription("No se ha detectado ningún error al usuario <@"+user.id+">")
+      message.author.send({embed}).catch();return null;
+    }
 
 
 
