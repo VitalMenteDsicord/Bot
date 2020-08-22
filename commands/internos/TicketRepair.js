@@ -48,11 +48,11 @@ module.exports.run = async (bot, message) => {
       let embed = new Discord.MessageEmbed()
         .setTitle("ERROR ENCONTRADO")
         .setColor(0x920000)
-        .setDescription("El usuario <@"+user.id+"> no tiene establecido su apodo IC")
+        .setDescription("El usuario <@"+user.id+"> ya tiene un canal activo")
+        .addField("","")
       message.author.send({embed}).catch();
       
-    } catch(err){
-      
+    } catch(err) {
       userdata.eliminar(user.id);
       channeldata.eliminar(canalUser);
       
