@@ -1,4 +1,4 @@
-const Discord = require("discord.js");const generator = require('generate-password');
+const Discord = require("discord.js");const generator = require('generate-password');const errores = require("./error/error.js");
 
 module.exports.run = async (bot, message) => {
     let prefix = bot.prefix;
@@ -11,7 +11,8 @@ module.exports.run = async (bot, message) => {
     if(Ncuenta === "NaN"){let tipo = 4;errores.run(bot, message, tipo);return null};
 
     let embed = new Discord.MessageEmbed()
-        .setTitle("PAGO").setColor(0xFFFF00)
+        .setTitle("PAGO")
+        .setColor(0xFFFF00)
         .setThumbnail("https://media.discordapp.net/attachments/708083728123035736/714744157985439894/latest.png")
         .addField("Código de pedido", codigo)
         .addField("Cantidad a pagar", "$ "+CantidadAP)

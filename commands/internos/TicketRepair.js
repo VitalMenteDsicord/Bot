@@ -26,7 +26,7 @@ module.exports.run = async (bot, message) => {
     {
       let embed = new Discord.MessageEmbed()
         .setTitle("ERROR ENCONTRADO")
-        .setColor(0x920000)
+        .setColor(0x920000) 
         .setDescription("El usuario <@"+user.id+"> no tiene establecido su apodo IC")
         .addField("Solución","/nick Nombre Apellido")
       message.author.send({embed}).catch();return null;
