@@ -16,17 +16,14 @@ app.use(express.static("public"));app.listen(process.env.PORT);
 setInterval(() => {http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);}, 280000);
 
 
+app.get("/discord", (request, response) => {
+    response.sendFile(__dirname + '/html/discord.html');
+});
+
 app.get("/", (request, response) => {
-    response.sendFile(__dirname + '/html/index.html');
+    response.sendFile(__dirname + '/html/discord.html');
 });
 
-app.get("/servicios", (request, response) => {
-    response.sendFile(__dirname + '/html/servicios.html');
-});
-
-app.get("/contacto", (request, response) => {
-    response.sendFile(__dirname + '/html/contacto.html');
-});
 
 
 // DISCORD BOT DATA //
