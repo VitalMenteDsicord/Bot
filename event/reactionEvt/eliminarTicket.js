@@ -5,13 +5,13 @@ const TicketChannelA = new db.crearDB('canalesA','tickets');
 
 module.exports.run = async (bot, messageReaction, user) => {
       
-    let datos = fs.readFileSync('./config/config.json');
-    let dataT = JSON.parse(datos).ticket;
+    let datos = fs.readFileSync('/app/config/config.json');
+    let dataT = JSON.parse(datos).Ticket;
 
     let categoriaActual = messageReaction.message.channel.parentID;
     let servidor = messageReaction.message.channel.guild;
     let canal = messageReaction.message.channel;
-    let rolesTCE = dataT.RolesTCl; let categoriaTC = dataT.CategoriaTC;
+    let rolesTCE = dataT.RolesTCl; let categoriaTC = dataT.CTicketCerrado;
 
     if(categoriaActual !== categoriaTC){return null}
 

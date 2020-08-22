@@ -5,13 +5,13 @@ const TicketChannel = new db.crearDB('canal', 'tickets');
 
 module.exports.run = async (bot, messageReaction, user) => {
 
-    let datos = fs.readFileSync('./config/config.json');
-    let dataT = JSON.parse(datos).ticket;
+    let datos = fs.readFileSync('/app/config/config.json');
+    let dataT = JSON.parse(datos).Ticket;
 
     let usuario = messageReaction.message.channel.guild.members.cache.get(user.id).nickname;
     let servidor = messageReaction.message.channel.guild;
 
-    let categoria = dataT.CategoriaTAb;let rolesTAB = dataT.RolesTAb;
+    let categoria = dataT.CTicketAbierto;let rolesTAB = dataT.RolesTAb;
     let userTicket = TicketUser.tiene(`${user.id}`) ? await TicketUser.obtener(`${user.id}`): 0;
 
 
@@ -46,7 +46,7 @@ module.exports.run = async (bot, messageReaction, user) => {
     });
 
     let embed = new Discord.MessageEmbed()
-        .setTitle("Su ticket ha sido creado")
+        .setTitle("Su ticket ha sido creado con éxito")
         .setColor(0xE5C62A)
         .setDescription("En un momento te atenderemos. Mientras tanto, indicanos tu nombre y el motivo de contacto. \n \n"+
         "Para cerrar el ticket reacciona con 🧻")

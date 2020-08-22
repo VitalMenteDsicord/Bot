@@ -12,7 +12,7 @@ module.exports.run = async (bot, message) => {
 
     let hasrole = await funciones.hasrole(message, roles);
 
-    //if(!hasrole){let tipo = 5;errores.run(bot, message, tipo);return null;}
+    if(!hasrole){let tipo = 5;errores.run(bot, message, tipo);return null;}
     if(message.mentions.users.size < 1){let tipo = 6;errores.run(bot, message, tipo);return null};
 
 
@@ -49,7 +49,7 @@ module.exports.run = async (bot, message) => {
         .setTitle("ERROR ENCONTRADO")
         .setColor(0x920000)
         .setDescription("El usuario <@"+user.id+"> ya tiene un canal activo")
-        .addField("","<#"+canal+">")
+        .addField("Canal activo","<#"+canal+">")
       message.author.send({embed}).catch();
       
     } catch(err) {

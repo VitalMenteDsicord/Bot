@@ -8,8 +8,8 @@ const TicketChannelA = new db.crearDB('canalesA','tickets');
 
 module.exports.run = async (bot, messageReaction, user) => {
 
-    let datos = fs.readFileSync('./config/config.json');
-    let dataT = JSON.parse(datos).ticket;
+    let datos = fs.readFileSync('/app/config/config.json');
+    let dataT = JSON.parse(datos).Ticket;
 
     let usuario = messageReaction.message.channel.guild.members.cache.get(user.id).nickname;
     let servidor = messageReaction.message.channel.guild;
@@ -18,7 +18,7 @@ module.exports.run = async (bot, messageReaction, user) => {
 
     let userTicket = TicketChannel.tiene(canal.id) ? await TicketChannel.obtener(canal.id): 0;
 
-    let categoriaTAB = dataT.CategoriaTAb;let categoriaTC = dataT.CategoriaTC;
+    let categoriaTAB = dataT.CTicketAbierto;let categoriaTC = dataT.CTicketCerrado;
     let rolesTAB = dataT.RolesTAb;let rolesTCE = dataT.RolesTAb;
     
     if(categoriaTAB === undefined || categoriaTAB === null){return null};
