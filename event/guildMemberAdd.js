@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (bot, messageReaction, user) => {
+module.exports = (bot, messageReaction, user) => {
 
     try {
         if(user.id === bot.user.id){return null;};
