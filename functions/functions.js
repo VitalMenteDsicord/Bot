@@ -13,9 +13,38 @@ function precenseUpdate(bot) {
     }, 15000)
 }
 
+function LoadC(bot) {
+  
+  console.log("[COMANDOS INTERNOS]");
+  for(const file of readdirSync('./commands/internos/')) { 
+    if(file.endsWith(".js")){
+        let archivo = require(`./commands/internos/${file}`); 
+        let aliases;
+        try {aliases = archivo.help.aliases.length;} catch(err){};
+        if(aliases > 0 && aliases !== undefined) {
+            for(let i = 0; i < aliases; i++){bot.comandosIN.set(archivo.help.aliases[i], archivo)};
+            bot.comandosIN.set(archivo.help.name, archivo);console.log(`${archivo.help.name}.js cargado con ${aliases} alias`);
+        } else {console.log(`${archivo.help.name}.js cargado`);bot.comandosIN.set(archivo.help.name, archivo)};
+    };
+  };
+  
+}
 
 
+function reloadC(bot) {
+  console.log("》 RECARGANDO COMANDOS 《")
+  
+  for(const file of readdirSync('./commands/internos/')) { 
+    if(file.endsWith(".js")){
+      delete require.cache[require.resolve(`./commands/internos/${file}`)]
+    };
+  };
+  
+  LoadC(bot)
+  
+};
 
 module.exports = {
-    precenseUpdate
+    precenseUpdate,
+    reloadC
 }
