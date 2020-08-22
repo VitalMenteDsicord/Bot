@@ -2,8 +2,8 @@ const funciones = require("./functions/functions.js");const errores = require(".
 /* LIBRRIAS */
 const Discord = require("discord.js"); const db = require('megadb'); const {readFileSync} = require("fs");
 
-//const userdata = new db.crearDB('iduser', 'tickets');
-//const userdata = new db.crearDB('idcanal', 'tickets');
+const userdata = new db.crearDB('iduser', 'tickets');
+const channeldata = new db.crearDB('idcanal', 'tickets');
 
 module.exports.run = async (bot, message) => {
 

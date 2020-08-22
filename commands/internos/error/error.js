@@ -61,6 +61,7 @@ module.exports.run = async (bot, message, tipo) => {
                 .setFooter("No puedo parar de pensar en ti desde que te presté dinero.")
             message.author.send({embed}).catch();
         break;
+    
     }
 
 }
