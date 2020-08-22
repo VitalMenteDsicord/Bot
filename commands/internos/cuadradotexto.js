@@ -31,7 +31,7 @@ module.exports.run = async (bot, message) => {
     let embed = new Discord.MessageEmbed()
         //.setAuthor('LSMA', 'https://i.imgur.com/LJClyPX.png', 'https://www.lu-rp.es/foro/thread-10448.html')
         .setTitle("¡Bienvenid@ a nuestra aplicación!")
-        .setDescription("Empresa médica dedicada a emergencias sanitarias, traslados no urgentes, farmacología y psquiatría ")
+        .setDescription("Empresa médica dedicada a emergencias sanitarias, traslados no urgentes, farmacología y psiquiatría. ¡Contamos con Seguro Extrahospitalario!")
         .setColor(0x037FDA)
         .addField("Menú de navegación", "¡Accede directamente desde aquí al apartado que desees!")
     
@@ -42,9 +42,12 @@ module.exports.run = async (bot, message) => {
         .addField("Seguro extrahospitalario", "<#737815244117901452>" , true)
         .addField("Unidad Psiquiatría", "<#746086788610916493>" , true)
         .addField("Ubicación", "<#737730544623812660>" , true)
-  
+    
+  	    .setFooter('LSMA® DATA CENTER ', 'https://images.vexels.com/media/users/3/136810/isolated/preview/85a11ddd9eaf0e9870707a68d640a5f8-icono-de-burbuja-de-servidor-by-vexels.png');
     message.channel.send({embed});
 
+  
+  // `Puedo meter variables dentro ${message}`, 'Solo texto' , "Solo texto"
 };
 
 
