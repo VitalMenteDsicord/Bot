@@ -19,7 +19,7 @@ module.exports.run = async (bot, messageReaction, user) => {
     let userTicket = TicketChannel.tiene(canal.id) ? await TicketChannel.obtener(canal.id): 0;
 
     let categoriaTAB = dataT.CTicketAbierto;let categoriaTC = dataT.CTicketCerrado;
-    let rolesTAB = dataT.RolesTAb;let rolesTCE = dataT.RolesTAb;
+    let rolesTAB = dataT.RolesOpen;let rolesTCE = dataT.RolesClosed;
     
     if(categoriaTAB === undefined || categoriaTAB === null){return null};
     if(categoriaTC === undefined || categoriaTC === null){return null};

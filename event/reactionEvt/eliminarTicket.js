@@ -11,7 +11,7 @@ module.exports.run = async (bot, messageReaction, user) => {
     let categoriaActual = messageReaction.message.channel.parentID;
     let servidor = messageReaction.message.channel.guild;
     let canal = messageReaction.message.channel;
-    let rolesTCE = dataT.RolesTCl; let categoriaTC = dataT.CTicketCerrado;
+    let rolesTCE = dataT.RolesClosed; let categoriaTC = dataT.CTicketCerrado;
 
     if(categoriaActual !== categoriaTC){return null}
 
