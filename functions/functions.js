@@ -43,7 +43,6 @@ function LoadC(bot) {
 
 }
 
-
 function reloadC(bot) {
   console.log("》 RECARGANDO COMANDOS 《")
   
@@ -62,6 +61,9 @@ function reloadC(bot) {
   LoadC(bot)
   
 };
+
+
+
 
 module.exports = {
     precenseUpdate,
