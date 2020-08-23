@@ -42,7 +42,7 @@ module.exports.run = async (bot, messageReaction, user) => {
 
     let embed = new Discord.MessageEmbed()
         .setTitle("Ticket cerrado")
-        .setColor(0xE5C62A)
+        .setColor(0x037FDA)
         .addField("Cerrado por", usuario)
         .addField("Opciones","Eliminar ticket 🗑 ")
     canal.send({embed}).then(m=> {m.react("🗑");});
