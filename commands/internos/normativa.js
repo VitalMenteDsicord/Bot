@@ -5,8 +5,7 @@ module.exports.run = async (bot, message) => {
     let embed = new Discord.MessageEmbed()
 
         .setTitle("Normativa Interna | Los Santos Medical Assistance")
-        .setDescription("Instalaciones de Hospitales Públicos de Los Santos: https://docs.google.com/document/d/1sXd1Q1W_wXRNt84IwPOJKKoYpwez8q5VQEy6l_uZeyQ/edit?usp=sharing")
-        .setURL('https://docs.google.com/document/d/1sXd1Q1W_wXRNt84IwPOJKKoYpwez8q5VQEy6l_uZeyQ/edit?usp=sharing')
+        .setDescription("https://docs.google.com/document/d/1sRtScXMiK1OpnAELGTh_-GWC1NvGuk5bYzV_6rrKZg4/edit?usp=sharing \n \n Todos los cambios en la normativa serán actualizados mediante este apartado.")
         .setColor(0x037FDA) 
     message.channel.send({embed});
 
