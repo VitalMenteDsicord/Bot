@@ -21,7 +21,7 @@ module.exports.run = async (bot, message) => {
 		    { name: 'Inline field title', value: 'Some value here', inline: true },
 	    )
 	    .addField('Inline field title', 'Some value here', true)
-	  .setImage('https://i.imgur.com/wSTFkRM.png')
+	  .setImage('https://cdn.discordapp.com/attachments/737590348372770816/737774218208608316/app.png')
 	  .setTimestamp()
 	  .setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
     
