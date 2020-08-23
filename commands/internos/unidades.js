@@ -4,10 +4,8 @@ module.exports.run = async (bot, message) => {
 
   
     let embed = new Discord.MessageEmbed()
-        .setTitle("Soporte Vital Avanzado")
-        .setDescription('Disponible.')
         .setColor(0x00F221)
-        .setImage('https://i.imgur.com/3We2OWv.png')
+        .setImage('https://i.imgur.com/KkmRJXg.gif')
     message.channel.send({embed});
 
 };
