@@ -23,7 +23,7 @@ module.exports = (bot, messageReaction, user) => {
         eliminarTicket.run(bot, messageReaction, user)
     } else if (emojiname === "💵") {
         let pagado = require("./reactionEvt/pagado.js"); 
-        return pagado.run(bot, messageReaction, user); 
+         pagado.run(bot, messageReaction, user); 
     }
 
 };    
