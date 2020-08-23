@@ -28,6 +28,19 @@ function LoadC(bot) {
     };
   };
   
+  console.log("[COMANDOS INFORMATIVOS]");
+  for(const file of readdirSync('/app/commands/informacion/')) { 
+      if(file.endsWith(".js")){
+          let archivo = require(`/app/commands/informacion/${file}`); 
+          let aliases;
+          try {aliases = archivo.help.aliases.length;} catch(err){};
+          if(aliases > 0 && aliases !== undefined) {
+              for(let i = 0; i < aliases; i++){bot.comandosINF.set(archivo.help.aliases[i], archivo)};
+              bot.comandosINF.set(archivo.help.name, archivo);console.log(`${archivo.help.name}.js cargado con ${aliases} alias`);
+          } else {console.log(`${archivo.help.name}.js cargado`);bot.comandosINF.set(archivo.help.name, archivo)};
+      };
+  };
+
 }
 
 
@@ -40,6 +53,12 @@ function reloadC(bot) {
     };
   };
   
+  for(const file of readdirSync('/app/commands/informacion/')) { 
+    if(file.endsWith(".js")){
+      delete require.cache[require.resolve(`/app/commands/informacion/${file}`)]
+    };
+  };
+
   LoadC(bot)
   
 };

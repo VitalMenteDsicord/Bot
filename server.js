@@ -3,6 +3,7 @@ const Discord = require('discord.js');const http = require('http');const express
 /* BOT AND DATA */
 const bot = new Discord.Client();
 bot.comandosIN = new Discord.Collection();
+bot.comandosINF = new Discord.Collection();
 bot.prefix = ";";
 /* WEB DATA & OTROS */ 
 const app = express();
@@ -41,6 +42,18 @@ for(const file of readdirSync('./commands/internos/')) {
             for(let i = 0; i < aliases; i++){bot.comandosIN.set(archivo.help.aliases[i], archivo)};
             bot.comandosIN.set(archivo.help.name, archivo);console.log(`${archivo.help.name}.js cargado con ${aliases} alias`);
         } else {console.log(`${archivo.help.name}.js cargado`);bot.comandosIN.set(archivo.help.name, archivo)};
+    };
+};
+console.log("[COMANDOS INFORMATIVOS]");
+for(const file of readdirSync('./commands/informacion/')) { 
+    if(file.endsWith(".js")){
+        let archivo = require(`./commands/informacion/${file}`); 
+        let aliases;
+        try {aliases = archivo.help.aliases.length;} catch(err){};
+        if(aliases > 0 && aliases !== undefined) {
+            for(let i = 0; i < aliases; i++){bot.comandosINF.set(archivo.help.aliases[i], archivo)};
+            bot.comandosINF.set(archivo.help.name, archivo);console.log(`${archivo.help.name}.js cargado con ${aliases} alias`);
+        } else {console.log(`${archivo.help.name}.js cargado`);bot.comandosINF.set(archivo.help.name, archivo)};
     };
 };
 

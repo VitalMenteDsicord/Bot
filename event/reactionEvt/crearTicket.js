@@ -46,14 +46,34 @@ module.exports.run = async (bot, messageReaction, user) => {
         }
     });
 
-    let embed = new Discord.MessageEmbed()
-        .setTitle("Su aviso ha llegado a centralita con éxito.")
-        .setColor(0x037FDA)
-        .setDescription("En un momento le atenderemos. Mientras tanto, indiquenos su emergencia. \n \n"+
-        "Para cerrar el ticket reacciona con 🧻")
-    canal.send({embed}).then(m => {m.react("🧻");});
+  
+    if(messageReaction.message.id === "747173925519229049"){
+    
+        let embed = new Discord.MessageEmbed()
+          .setTitle("Su aviso ha llegado a centralita con éxito.")
+          .setColor(0x037FDA)
+          .setDescription("En un momento le atenderemos. Mientras tanto, indiquenos su emergencia. \n \n"+
+          "Para cerrar el ticket reacciona con 🧻")
+      canal.send({embed}).then(m => {m.react("🧻");});
 
-    TicketUser.establecer(user.id, canal.id);
-    TicketChannel.establecer(canal.id, user.id);
+      TicketUser.establecer(user.id, canal.id);
+      TicketChannel.establecer(canal.id, user.id);  
+      
+  } else if (messageReaction.message.id === "") {
+    
+      let embed = new Discord.MessageEmbed()
+          .setTitle("Su ticket ha sido creado con éxito.")
+          .setColor(0x037FDA)
+          .setDescription("En un momento le atenderemos. Mientras tanto, indiquenos su nombre completo y la razón por la que nos contacta el día de hoy. \n \n"+
+          "Para cerrar el ticket reacciona con 🧻")
+      canal.send({embed}).then(m => {m.react("🧻");});
+
+      TicketUser.establecer(user.id, canal.id);
+      TicketChannel.establecer(canal.id, user.id);  
+    
+  }
+  
+  
+
 
 };
