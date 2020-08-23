@@ -11,7 +11,8 @@ module.exports.run = async (bot, messageReaction, user) => {
     let usuario = messageReaction.message.channel.guild.members.cache.get(user.id).nickname;
     let servidor = messageReaction.message.channel.guild;
 
-    let categoria = dataT.CTicketAbierto;let rolesTAB = dataT.RolesTAb;
+    let categoria = dataT.CTicketAbierto;
+  let rolesTAB = dataT.RolesTAb;
     let userTicket = TicketUser.tiene(`${user.id}`) ? await TicketUser.obtener(`${user.id}`): 0;
 
 
