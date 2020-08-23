@@ -27,17 +27,21 @@ module.exports.run = async (bot, messageReaction, user) => {
     if(categoriaActual !== categoriaTAB){return null};
 
     bot.channels.cache.get(canal.id).edit({parent: categoriaTC}).then(async ch => {
+        
         ch.setParent(categoriaTC);
         ch.permissionOverwrites.get(userTicket).delete().catch();
         ch.updateOverwrite(servidor.id, {VIEW_CHANNEL: false});
+        
         for(let i = 0; i<rolesTAB.length;i++){
             let role = rolesTAB[i];
             ch.permissionOverwrites.get(role).delete().catch();
         }
+      
         for(let e = 0; e<rolesTCE.length;e++){
-            let role = rolesTCE[e];
-            ch.updateOverwrite(role, {VIEW_CHANNEL: true});
+            let role2 = rolesTCE[e];
+            ch.updateOverwrite(role2, {VIEW_CHANNEL: true});
         }
+      
     });
 
     let embed = new Discord.MessageEmbed()

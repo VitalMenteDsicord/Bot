@@ -47,7 +47,7 @@ module.exports.run = async (bot, messageReaction, user) => {
     });
 
   
-    if(messageReaction.message.id === "747173925519229049"){
+  if(messageReaction.message.id === "747173925519229049"){
     
         let embed = new Discord.MessageEmbed()
           .setTitle("Su aviso ha llegado a centralita con éxito.")
@@ -59,12 +59,26 @@ module.exports.run = async (bot, messageReaction, user) => {
       TicketUser.establecer(user.id, canal.id);
       TicketChannel.establecer(canal.id, user.id);  
       
-  } else if (messageReaction.message.id === "") {
+  } 
+  else if (messageReaction.message.id === "747228214253846660") {
     
       let embed = new Discord.MessageEmbed()
           .setTitle("Su ticket ha sido creado con éxito.")
           .setColor(0x037FDA)
           .setDescription("En un momento le atenderemos. Mientras tanto, indiquenos su nombre completo y la razón por la que nos contacta el día de hoy. \n \n"+
+          "Para cerrar el ticket reacciona con 🧻")
+      canal.send({embed}).then(m => {m.react("🧻");});
+
+      TicketUser.establecer(user.id, canal.id);
+      TicketChannel.establecer(canal.id, user.id);  
+    
+  }  
+  else if (messageReaction.message.id === "747229416534573096") {
+    
+      let embed = new Discord.MessageEmbed()
+          .setTitle("Su ticket ha sido creado con éxito.")
+          .setColor(0x037FDA)
+          .setDescription("En un momento le atenderemos. Mientras tanto, indiquenos su nombre completo y el servicio de psiquiatría que desea contratar \n \n"+
           "Para cerrar el ticket reacciona con 🧻")
       canal.send({embed}).then(m => {m.react("🧻");});
 
