@@ -47,9 +47,9 @@ module.exports.run = async (bot, messageReaction, user) => {
     });
 
     let embed = new Discord.MessageEmbed()
-        .setTitle("Su aviso ha llegado a centralita.")
+        .setTitle("Su aviso ha llegado a centralita con éxito.")
         .setColor(0x037FDA)
-        .setDescription("En un momento te atenderemos. Mientras tanto, indicanos tu nombre y su emergencia. \n \n"+
+        .setDescription("En un momento le atenderemos. Mientras tanto, indiquenos su emergencia. \n \n"+
         "Para cerrar el ticket reacciona con 🧻")
     canal.send({embed}).then(m => {m.react("🧻");});
 
