@@ -13,7 +13,6 @@ module.exports = (bot, messageReaction, user) => {
 
 
     if (emojiname === "📩") {
-        console.log("Llego")
         let createTicket = require("./reactionEvt/crearTicket.js");
         createTicket.run(bot, messageReaction, user)
     } else if (emojiname === "🧻") {
