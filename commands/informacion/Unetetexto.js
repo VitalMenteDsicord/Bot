@@ -10,7 +10,7 @@ module.exports.run = async (bot, message) => {
     
     	.setColor('#0099ff')
 	    .setTitle('Some title')
-	    .setURL('https://discord.js.org/')
+	    .setURL('https://docs.google.com/document/d/1yrsaI5foK5JMlVOGlgNMXLXEEbn9XmNe4kRAEDPXXMw/edit?usp=sharing')
 	    .setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
 	    .setDescription('Some description here')
 	    .setThumbnail('https://i.imgur.com/wSTFkRM.png')
