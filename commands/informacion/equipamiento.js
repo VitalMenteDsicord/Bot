@@ -5,7 +5,8 @@ module.exports.run = async (bot, message) => {
     let embed = new Discord.MessageEmbed()
 
         .setTitle("Guia médica avanzada")
-        .setDescription("En esta guia encontraremos los procedimientos para casi todas las situaciones posibles a encontrarnos atendiendo avisos de emergencia, solo se incluirá el tipo de heridas"
+        .setDescription("Tipos de heridas, y tratamiento de las mismas. \n \n \n  **Heridas superficiales:** Las heridas superficiales son las más habituales de encontrar, muestran sangrado leve visible, separación de los bordes de piel, y suciedad cubriendo la zona. \n - Limpieza de la zona
+esta. Las medidas a tomar son las siguientes"
 ")
         .setColor(0xC2E512) 
     message.channel.send({embed});
