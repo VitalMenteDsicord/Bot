@@ -73,12 +73,12 @@ module.exports.run = async (bot, messageReaction, user) => {
       TicketChannel.establecer(canal.id, user.id);  
     
   }  
-  else if (messageReaction.message.id === "747230794938056736") {
+  else if (messageReaction.message.id === "747230794938056736" || messageReaction.message.id === "747230794938056736") {
     
       let embed = new Discord.MessageEmbed()
           .setTitle("Su ticket ha sido creado con éxito.")
           .setColor(0x037FDA)
-          .setDescription("En un momento le atenderemos. Mientras tanto, indiquenos su nombre completo y el servicio de psiquiatría que desea contratar \n \n"+
+          .setDescription("En un momento le atenderemos. Mientras tanto, indiquenos su nombre completo y a que departamento desea dirigir su ticket (Psiquiatria o Psicologia) \n \n"+
           "Para cerrar el ticket reacciona con 🧻")
       canal.send({embed}).then(m => {m.react("🧻");});
 
