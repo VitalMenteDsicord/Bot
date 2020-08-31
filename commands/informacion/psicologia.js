@@ -6,6 +6,7 @@ module.exports.run = async (bot, message) => {
 
         .setTitle("Información de Psicología")
         .setDescription("Estamos trabajando dia y noche para crear la unidad psicologica de LSMA.")
+        .setImage('https://i.imgur.com/cqdq5DT.jpg')
         .setColor(0x037FDA) 
     message.channel.send({embed});
 
