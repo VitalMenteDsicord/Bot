@@ -15,10 +15,10 @@ module.exports.run = async (bot, message) => {
   
   
       let embed = new Discord.MessageEmbed()
-        .setTitle("Departamento de Psiquiatría")
+        .setTitle("Departamento de Psicología")
         .setColor(0x037FDA)
-        .setImage("https://i.imgur.com/FnRxdtU.png")
-        .setDescription("¡Habla con nuestra experta de la unidad de psiquiatría! \n (Tiempo estimado de espera: De 2-10 minutos.)")
+        .setImage("https://i.imgur.com/kIn26A8.png")
+        .setDescription("¡Habla con nuestra experta de la unidad de psicología! \n (Tiempo estimado de espera: De 2-10 minutos.)")
         .setFooter('LSMA® DATA CENTER', 'https://images.vexels.com/media/users/3/136810/isolated/preview/85a11ddd9eaf0e9870707a68d640a5f8-icono-de-burbuja-de-servidor-by-vexels.png')
     message.channel.send({embed}).then(m => m.react("📩")).catch();
 };
