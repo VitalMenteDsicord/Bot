@@ -73,7 +73,7 @@ module.exports.run = async (bot, messageReaction, user) => {
       TicketChannel.establecer(canal.id, user.id);  
     
   }  
-  else if (messageReaction.message.id === "747230794938056736" || messageReaction.message.id === "750253524646101002") {
+  else if (messageReaction.message.id === "747230794938056736" || messageReaction.message.id === "750254486492151810") {
     
       let embed = new Discord.MessageEmbed()
           .setTitle("Su ticket ha sido creado con éxito.")
