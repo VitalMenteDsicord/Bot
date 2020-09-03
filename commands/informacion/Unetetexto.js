@@ -21,7 +21,7 @@ module.exports.run = async (bot, message) => {
 		    { name: 'Inline field title', value: 'Some value here', inline: true },
 	    )
 	    .addField('Inline field title', 'Some value here', true)
-	  .setImage('https://i.imgur.com/cqdq5DT.jpg')
+	  .setImage('https://i.imgur.com/6acg7sv.png)
 	  .setTimestamp()
 	  .setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
     
