@@ -4,10 +4,9 @@ module.exports.run = async (bot, message) => {
   
     let embed = new Discord.MessageEmbed()
 
-        .setTitle("LSMA DATA")
-        .setDescription("Acceso a la Aplicación de LSMA DATA PC")
-        .setImage('https://cdn.discordapp.com/attachments/737821160485683312/737822654924324874/44444.png')
-        .setColor(0xEF060D) 
+        .setTitle("EQUIPAMIENTO MÉDICO")
+        .setDescription("Detalles sobre nuestro equipamiento en UVI Movil: https://docs.google.com/document/d/1C9JTJgr55K6Z0QnEa3kueyDm6O5dattgMLbWxs9g4sM/edit?usp=sharing")
+        .setColor(0xF1EE16) 
     message.channel.send({embed});
 
 };
