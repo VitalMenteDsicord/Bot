@@ -5,8 +5,8 @@ module.exports.run = async (bot, message) => {
     let embed = new Discord.MessageEmbed()
 
         .setTitle("Aviso del uso de reacción")
-        .setDescription("/do Se vería como salen varios celadores del interior del hospital y trasladan al paciente la sala de urgencias, donde sería atendido.")
-        .setColor(0x037FDA) 
+        .setDescription("Para que se haga efectivo el uso del ticket o centralita, pulsa dos veces la reacción.")
+        .setColor(0xF12D16) 
     message.channel.send({embed});
 
 };
