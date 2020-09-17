@@ -11,7 +11,7 @@ module.exports.run = async (bot, messageReaction, user) => {
     let datos = fs.readFileSync('/app/config/config.json');
     let dataT = JSON.parse(datos).Ticket;
 
-    let usuario = messageReaction.message.channel.guild.members.cache.get(user.id).nickname;
+    let usuario = messageReaction.message.channel.guild.members.cache.get(user.id).nickanme;
     let servidor = messageReaction.message.channel.guild;
     let categoriaActual = messageReaction.message.channel.parentID;
     let canal = messageReaction.message.channel;
