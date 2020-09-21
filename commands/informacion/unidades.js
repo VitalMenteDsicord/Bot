@@ -5,7 +5,7 @@ module.exports.run = async (bot, message) => {
   
     let embed = new Discord.MessageEmbed()
         .setColor(0x00F221)
-        .setImage('https://i.imgur.com/jxsdoNO.png')
+        .setImage('https://i.imgur.com/pgnnfiM.png')
     message.channel.send({embed});
 
 };
