@@ -4,8 +4,8 @@ module.exports.run = async (bot, message) => {
   
     let embed = new Discord.MessageEmbed()
 
-        .setTitle("Normativa Interna | Uso de comandos ")
-        .setDescription("Se añade a partir del día 01/09 de 2020, el punto de Uso de comandos.")
+        .setTitle("Normativa Interna | Unidades Especiales")
+        .setDescription("Se añade a partir del día 21/09 de 2020, el punto de Unidades Especiales, que trata sobre el uso del VIR y CORONER.")
         .setColor(0x037FDA) 
     message.channel.send({embed});
 
