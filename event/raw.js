@@ -14,6 +14,5 @@ module.exports = (bot, event) => {
             bot.emit('messageReactionAdd', msgReaction, user); //Envia el siguiente evento
           }).catch(err => console.log(err));
         };
-
     };
 };
