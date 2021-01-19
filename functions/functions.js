@@ -13,7 +13,8 @@ function precenseUpdate(bot) {
     }, 15000)
 }
 
-function LoadC(bot) {
+function 
+(bot) {
   
   console.log("[COMANDOS INTERNOS]");
   for(const file of readdirSync('/app/commands/internos/')) { 
