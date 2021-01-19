@@ -4,8 +4,8 @@ module.exports.run = async (bot, message) => {
   
     let embed = new Discord.MessageEmbed()
 
-        .setTitle("Gambalex es DIOS")
-        .setDescription("¡Hola a todos! **SOY DIOS**")
+        .setTitle("Gambalex es GAY")
+        .setDescription("¡Hola a todos! **SOY GAY**")
         .setColor(0xDD0B0B) 
     message.channel.send({embed});
 
