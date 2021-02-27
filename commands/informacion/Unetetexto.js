@@ -30,8 +30,8 @@ module.exports.run = async (bot, message) => {
   
     let embed = new Discord.MessageEmbed()
         //.setAuthor('LSMA', 'https://i.imgur.com/LJClyPX.png', 'https://www.lu-rp.es/foro/thread-10448.html')
-        .setTitle("Solicitud de Empleo")
-        .setDescription("Empresa médica dedicada a emergencias sanitarias, traslados no urgentes, farmacología y psiquiatría. ¡Contamos con Seguro Extrahospitalario!")
+        .setTitle("¡Bienvenido a LSMA® application!")
+        .setDescription("Empresa médica dedicada a emergencias sanitarias, traslados no urgentes, farmacología y psiquiatría. ¡También en el Hospital de Pillbox!")
         .setColor(0x037FDA)
         .addField("Menú de navegación", "¡Accede directamente desde aquí al apartado que desees!")
     
@@ -39,8 +39,8 @@ module.exports.run = async (bot, message) => {
         .addField("Unete a nosotros", "<#737736774218154094>" , true)
         .addField("Farmacia", "<#737591727962980352>" , true)
     
-        .addField("Seguro extrahospitalario", "<#737815244117901452>" , true)
-        .addField("Unidad Psiquiatría", "<#746086788610916493>" , true)
+        .addField("Contacto Emergencias", "<#737590914402353224>" , true)
+        .addField("Salud Mental", "<#749870390012280833>" , true)
         .addField("Ubicación", "<#737730544623812660>" , true)
     
   	    .setFooter('LSMA® DATA CENTER ', 'https://images.vexels.com/media/users/3/136810/isolated/preview/85a11ddd9eaf0e9870707a68d640a5f8-icono-de-burbuja-de-servidor-by-vexels.png');
