@@ -39,7 +39,7 @@ module.exports.run = async (bot, message) => {
         .addField("Unete a nosotros", "<#737736774218154094>" , true)
         .addField("Autorizados", "<#815652491311054849>" , true)
     
-        .addField("Información", "<#815658086609322054>" , true)
+        .addField("Información", "<#815671824960192566>" , true)
         .addField("Psicotécnicos", "<#746086878503239822>" , true)
         .addField("Ubicación", "<#815651444312506388>" , true)
     
