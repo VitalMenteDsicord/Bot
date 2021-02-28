@@ -73,4 +73,4 @@ for(const file of readdirSync('./event/')) {
 
 
 
-bot.login('')
+bot.login('ODE1NjM3MDc1NTIwMjU4MDk4.YDvTOA.t0N20oohTxEQalzo00s9N9n0d58')

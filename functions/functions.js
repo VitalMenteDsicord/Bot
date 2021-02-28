@@ -1,7 +1,7 @@
 const Discord = require('discord.js'); let { readdirSync } = require('fs'); 
 
 function precenseUpdate(bot) {
-    let datos = ["Los Santos Medical Assistance" , "¡Tu vida, es la nuestra!", "Leyendas Urbanas RP🎭"]
+    let datos = ["Hospital Pillbox Hills" , "Abierto 24/7", "Servidor Interno"]
     setInterval(function() {
             bot.user.setActivity(datos[0], {type:'PLAYING'});
             setTimeout(function() {
