@@ -6,8 +6,8 @@ module.exports.run = async (bot, message) => {
 
         .setTitle("Pillbox Hills Medical Center | Localización")
         .setColor(0x037FDA)
-        .setDescription("Nos encontramos justo en frente de LifeInvader, en Rockford Hills. ¿Tienes alguna duda? mandanos un correo a **info@lsma.es**")
-        .setImage("https://i.imgur.com/nrIN7ez.jpg")
+        .setDescription("Nos encontramos en Rockford Hills, entrada superior o por en frente de la estación de Autobuses de Los Santos")
+        .setImage("https://static.wikia.nocookie.net/gtawiki/images/a/a7/PillboxHillMedicalCenter-GTAV.png")
     
     message.channel.send({embed}).catch();
 
@@ -15,5 +15,5 @@ module.exports.run = async (bot, message) => {
 
 
 module.exports.help = {
-    name: "localizacion" 
+    name: "localizacion2" 
 };
