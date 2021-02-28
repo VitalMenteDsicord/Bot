@@ -30,8 +30,8 @@ module.exports.run = async (bot, message) => {
   
     let embed = new Discord.MessageEmbed()
         //.setAuthor('LSMA', 'https://i.imgur.com/LJClyPX.png', 'https://www.lu-rp.es/foro/thread-10448.html')
-        .setTitle("¡Bienvenido a LSMA® application!")
-        .setDescription("Empresa médica dedicada a emergencias sanitarias, traslados no urgentes, farmacología y psiquiatría. ¡También en el Hospital de Pillbox!")
+        .setTitle("Pillbox Hills Medical Center")
+        .setDescription("Sistema automatizado diseñado por y para el departamento médico de Los Santos Medical Assistance.")
         .setColor(0x037FDA)
         .addField("Menú de navegación", "¡Accede directamente desde aquí al apartado que desees!")
     
@@ -52,5 +52,5 @@ module.exports.run = async (bot, message) => {
 
 
 module.exports.help = {
-    name: "unetetexto" // Comando que tienes que poner en discord 
+    name: "unetetexto2" // Comando que tienes que poner en discord 
 };
