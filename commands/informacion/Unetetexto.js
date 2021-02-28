@@ -35,13 +35,13 @@ module.exports.run = async (bot, message) => {
         .setColor(0xF8281B)
         .addField("Menú de navegación", "¡Accede directamente desde aquí al apartado que desees!")
     
-        .addField("Nuestra empresa", "<#737592540877946970>" , true)
+        .addField("Contacto directo", "<#815651832515919902>" , true)
         .addField("Unete a nosotros", "<#737736774218154094>" , true)
-        .addField("Farmacia", "<#737591727962980352>" , true)
+        .addField("Autorizados", "<#815652491311054849>" , true)
     
-        .addField("Contacto Emergencias", "<#737590914402353224>" , true)
-        .addField("Salud Mental", "<#749870390012280833>" , true)
-        .addField("Ubicación", "<#737730544623812660>" , true)
+        .addField("Información", "<#815658086609322054>" , true)
+        .addField("Psicotécnicos", "<#746086878503239822>" , true)
+        .addField("Ubicación", "<#815651444312506388>" , true)
     
   	    .setFooter('Pillbox® Data Center ', 'https://i.imgur.com/lCJUNKB.png');
     message.channel.send({embed});
