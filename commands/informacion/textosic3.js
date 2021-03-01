@@ -5,7 +5,7 @@ module.exports.run = async (bot, message) => {
     let embed = new Discord.MessageEmbed()
 
         .setTitle("Portal de citas médicas")
-        .setDescription("https://trello.com/invite/b/L3M9ETOF/ad429b4f68411c32e374f25347c391b6/citas-m%C3%A9dicas")
+        .setDescription("Accede al portal de LSMA para indicar una nueva fecha para consulta o operación. Recuerda marcar la tarea una vez realizada. https://cutt.ly/llKQ4Ak")
         .setColor(0xF8281B) 
     message.channel.send({embed});
 
