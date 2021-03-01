@@ -4,8 +4,8 @@ module.exports.run = async (bot, message) => {
   
     let embed = new Discord.MessageEmbed()
 
-        .setTitle("Procedimiento - Apertura de una via (En camilla)")
-        .setDescription("/me coge del bolsillo una pequeña cinta e intenta colocarsela al paciente en el brazo. \n \n /do Tras esto, ¿Las venas de su brazo serían visibles? \n \n /me coge un cateter, y procede a su colocación con sumo cuidado, tras esto lo enchufa al compresor.")
+        .setTitle("Procedimiento - Disparo de bala")
+        .setDescription("/me comprueba si la hemorragia se encuentra activa, observando detalladamente. \n \n /do ¿El paciente tendría hemorragia activa en estos momentos? \n \n **(SI)** Coge unas gasas e intenta parar el sangrado de la herida. \n \n /do ¿Pararía la hemorragia con éxito este procedimiento? \n \n **(En caso de que no pare)** /me coge del cajón vendaje compresivo e intenta colocarselo en la zona. \n \n ¿Finalmente con ayuda del vendaje compresivo pararía la hemorragia con éxito? \n \n **(NO)** /me procede a colocar clorhexidina en la zona para la debida desinfección de la zona y observa la herida. \n \n /do ¿Tendría la herida de entrada y salida, o la bala se encontraría en su interior? \n \n **(En caso de que este dentro)** /do Se vería a un equipo de celadores trasladar al sujeto hacia el quirofano. \n \n **(En caso de no operar nosotros)** /do Los cirujanos llegarían a la sala y procederían con ")
         .setColor(0xF8281B) 
     message.channel.send({embed});
 
