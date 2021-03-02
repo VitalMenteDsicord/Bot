@@ -4,14 +4,14 @@ module.exports.run = async (bot, message) => {
   
     let embed = new Discord.MessageEmbed()
 
-        .setTitle("Texto IC - Alta Voluntaria")
-        .setDescription("¡Bienvenido a la academia de LSMA! \n \n **LSMA ASISTENCIA SANITARIA**: ")
-        .setColor(0x037FDA) 
+        .setTitle("Lista de copagos")
+        .setDescription("Aquí podéis ver nuestras tarifas para algunas intervenciones: ")
+        .setColor(0xF8281B) 
     message.channel.send({embed});
 
 };
 
 
 module.exports.help = {
-    name: "academia" 
+    name: "academia2" 
 };
