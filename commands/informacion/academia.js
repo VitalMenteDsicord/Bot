@@ -5,7 +5,7 @@ module.exports.run = async (bot, message) => {
     let embed = new Discord.MessageEmbed()
 
         .setTitle("Lista de copagos")
-        .setDescription("Aquí podéis ver nuestras tarifas para algunas intervenciones: ")
+        .setDescription("Aquí podéis ver nuestras tarifas para algunas intervenciones: https://cutt.ly/WlNnVsc")
         .setColor(0xF8281B) 
     message.channel.send({embed});
 
