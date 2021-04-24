@@ -4,7 +4,7 @@ module.exports.run = async (bot, message) => {
   
     let embed = new Discord.MessageEmbed()
 
-        .setTitle("Sujerencias")
+        .setTitle("Sugerencias")
         .setDescription("· Añade aqui yu sugerencia,sera siempre bien acogida.")
         .setColor(0x037FDA) 
     message.channel.send({embed});
